@@ -4,4 +4,30 @@
     border-radius: 7px;
     border: 1px solid black;
     font-size: 1.2rem;
+
+}
+
+.searchResults{
+    border: 1px solid black;
+    height: 30vw;
+    width: 50vw;
+    margin-top: 50px;
+    border-radius: 7px;
+}
+
+.searchbarMainComponent{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.searchButton{
+    width: 100px;
+}
+
+.searchButtonContainer{
+    display: flex;
+    justify-content: end;
 }

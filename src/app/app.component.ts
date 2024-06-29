@@ -11,16 +11,4 @@ export class AppComponent {
   data: any;
 
   constructor(private apiService: ApiService){}
-
-  ngOnInit(): void{
-    this.apiService.getData().subscribe(
-      (response) => {
-        this.data = response;
-        console.log(this.data);
-      },
-      (error) => {
-        console.error('Oh dear, there was an error', error)
-      }
-    )
-  }
 }
