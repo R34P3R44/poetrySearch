@@ -78,14 +78,21 @@
 
   .content {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     width: 100%;
     max-width: 700px;
     margin-bottom: 3rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh
   }
 
   .content h1 {
     margin-top: 1.75rem;
+    display: flex;
+    justify-content: center;
+
   }
 
   .content p {
@@ -163,12 +170,15 @@
   }
 
   .searchbarComponent{
-    margin: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+  }
 
+  .dropdownComponent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .titleComponent{
@@ -196,12 +206,19 @@
 
 <main class="main">
   <div class="content">
-    <div class="titleComponent">
-      <h1 class="">{{ title }}</h1>
+    <div>
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="bodyComponent">
+      <div class="dropdownComponent">
+        <app-dropdown class="drpdownComponent"></app-dropdown>
+      </div>  
       <div class="searchbarComponent">
-        <!-- <div>{{data | json}}</div> -->
         <app-search-bar></app-search-bar>
       </div>
+      <!-- <div>
+        {{results}}
+      </div> -->
     </div>
   </div>
 </main>

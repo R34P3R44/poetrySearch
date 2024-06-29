@@ -1,10 +1,12 @@
 
-<div class="searchbarMainComponent">
-    <input class="searchbarInput" type="text" [(ngModel)]="query" placeholder="Search..."/>
+
+
+<div class="searchbarContainer">
+    <input class="searchbarInput" type="text" [(ngModel)]="query"  placeholder="Search..." />
     <div class="searchButtonContainer">
         <button (click)="onSearch()" class="searchButton">Search</button>
     </div>
-    </div>
+</div>
 <div *ngIf="results.length > 0" class="searchResults">
     <ul>
         <li *ngFor="let item of results">{{item.name}}</li>

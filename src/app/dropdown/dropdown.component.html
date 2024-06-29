@@ -1,1 +1,11 @@
-<p>dropdown works!</p>
+<div class="dropdownSelectComponent">
+    <select class="dropdownSelect" id="dropdown" [(ngModel)]="selectedValue" (change)="onSelectionChange($event)">
+        <option value="" disabled selected>Select criteria...</option>
+        <option *ngFor="let option of options" [value]="option.value">
+            {{option.display}}
+        </option>
+    </select>
+</div>
+<div>
+    <p></p>
+</div>

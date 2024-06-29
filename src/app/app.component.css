@@ -1,0 +1,14 @@
+.searchbarComponent{
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyComponent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 25vh;
+    padding: 5px;
+}
+

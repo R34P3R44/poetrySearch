@@ -7,12 +7,11 @@ import { Observable } from 'rxjs';
 })
 
 export class ApiService {
-  // private apiUrl = 'https://poetrydb.org/search';
 
   constructor(private http: HttpClient) { }
 
   search(query: string): Observable<any> {
-    return this.http.get<any>(`https://poetrydb.org/title/${query}`);
+    return this.http.get<any>(`https://poetrydb.org/${query}`);
 
   }
 }
