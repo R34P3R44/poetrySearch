@@ -1,0 +1,26 @@
+.searchbarComponent{
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyComponent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 25vh;
+    padding: 5px;
+}
+
+.searchButtonContainer{
+    display: flex;
+    align-self: flex-end;
+}
+
+.searchButton{
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 30px;
+    font-size: 1rem;
+}
