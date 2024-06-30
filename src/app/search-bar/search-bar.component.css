@@ -15,24 +15,11 @@
     border-radius: 7px;
 }
 
-
-.searchButton{
-    width: 100px;
-    border-radius: 5px;
-    border: 1px solid black;
-    height: 25px;
-}
-
-.searchButtonContainer{
-    display: flex;
-    justify-content: end;
-}
-
 .searchbarContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 12vh;
+    height: 40px;
 }
 
 .input{

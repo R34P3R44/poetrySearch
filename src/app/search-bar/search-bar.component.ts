@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ApiService } from '../api.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,19 +6,13 @@ import { ApiService } from '../api.service';
   styleUrl: './search-bar.component.css'
 })
 export class SearchBarComponent {
-  query: string = '';
-  results: any[] = [];
+  text: string = '';
 
-  constructor(private apiService: ApiService){ }
+  @Output() SearchTerm: EventEmitter<string> = new EventEmitter<string>();
 
-  onSearch():void {
-    this.apiService.search(this.query).subscribe(
-      (response) => {
-        this.results = response.items;
-      },
-      (error: any) => {
-        console.error('Oh dear, there was an error', error)
-      }
-    )
+  sendTheNewValue(event: any): void {
+    this.text = event.target.value;
+    this.SearchTerm.emit(this.text)
   }
+
 }

@@ -20,19 +20,15 @@
     --gray-700: oklch(36.98% 0.014 302.71);
     --gray-400: oklch(70.9% 0.015 304.04);
 
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
 
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
 
     --pill-accent: var(--bright-blue);
 
@@ -65,6 +61,7 @@
     width: 100%;
     min-height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
@@ -81,8 +78,6 @@
     flex-direction: column;
     width: 100%;
     max-width: 700px;
-    margin-bottom: 3rem;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 40vh
@@ -140,9 +135,11 @@
   .pill-group .pill:nth-child(6n + 1) {
     --pill-accent: var(--bright-blue);
   }
+
   .pill-group .pill:nth-child(6n + 2) {
     --pill-accent: var(--french-violet);
   }
+
   .pill-group .pill:nth-child(6n + 3),
   .pill-group .pill:nth-child(6n + 4),
   .pill-group .pill:nth-child(6n + 5) {
@@ -169,19 +166,19 @@
     fill: var(--gray-900);
   }
 
-  .searchbarComponent{
+  .searchbarComponent {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
 
-  .dropdownComponent{
+  .dropdownComponent {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
 
-  .titleComponent{
+  .titleComponent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,15 +208,23 @@
     </div>
     <div class="bodyComponent">
       <div class="dropdownComponent">
-        <app-dropdown class="drpdownComponent"></app-dropdown>
-      </div>  
-      <div class="searchbarComponent">
-        <app-search-bar></app-search-bar>
+        <app-dropdown (SearchCriteria)="handleDDLSelection($event)" class="drpdownComponent"></app-dropdown>
       </div>
-      <!-- <div>
-        {{results}}
-      </div> -->
+      <div class="searchbarComponent">
+        <app-search-bar (SearchTerm)="handleSearchTerm($event)"></app-search-bar>
+      </div>
+      <div class="searchButtonContainer">
+        <button (click)="onSearch()" class="searchButton">Search</button>
+      </div>
     </div>
+  </div>
+  <div *ngIf="results.length">
+    <h2>Search Results</h2>
+    <ul>
+      <li>
+        <h4>{{results}}</h4>
+      </li>
+    </ul>
   </div>
 </main>
 <router-outlet />

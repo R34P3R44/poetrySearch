@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -7,15 +7,18 @@ import { Component } from '@angular/core';
 })
 export class DropdownComponent {
   selectedValue: string = '';
+  @Output() SearchCriteria: EventEmitter<string> = new EventEmitter<string>();
+  
   options: {value: string, display: string}[] = [
-    {value: 'option1', display: 'Author'},
-    {value: 'option2', display: 'Title'},
-    {value: 'option3', display: 'Lines'},
-    {value: 'option4', display: 'Line count'},
-    {value: 'option5', display: 'Poem count'},
+    {value: 'author', display: 'Author'},
+    {value: 'title', display: 'Title'},
+    {value: 'lines', display: 'Lines'},
+    {value: 'linecount', display: 'Line count'},
+    {value: 'poemcount', display: 'Poem count'},
   ];
 
   onSelectionChange(event: any): void{
     this.selectedValue = event.target.value;
+    this.SearchCriteria.emit(this.selectedValue)
   }
 }
