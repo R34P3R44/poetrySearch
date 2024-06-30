@@ -7,23 +7,40 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TreeComponent } from './tree/tree.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    DropdownComponent
+    DropdownComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatTreeModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    TreeComponent
+  
   ],
   providers: [
     provideClientHydration(),
     provideHttpClient(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
