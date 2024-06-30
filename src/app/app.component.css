@@ -25,3 +25,52 @@
     font-size: 1rem;
     cursor: pointer;
 }
+
+.treeviewComponent{
+    width: 50vw;
+}
+
+.cardContainer{
+    height: 'auto';
+    width: 'auto';
+    border-radius: 5px;
+    background-color: rgb(195, 195, 195);
+    margin: 10px
+}
+
+.cardInnerContainer{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.cardPoemContainer {
+    display: flex;
+    flex-direction: column;
+    width: 20vw
+}
+
+.content1 {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  

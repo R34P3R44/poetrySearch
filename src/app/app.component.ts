@@ -8,6 +8,7 @@ import { ApiService } from './api.service';
   
 })
 export class AppComponent {
+  [x: string]: any;
   title = 'PoetrySearch'
   receivedDDLselection: string = '';
   receivedSearchTerm: string = '';
@@ -21,8 +22,6 @@ export class AppComponent {
 
   handleSearchTerm(textData: string ): void {
     this.receivedSearchTerm = textData;
-    console.log(textData)
-
   }
 
   constructor(private apiService: ApiService){ }

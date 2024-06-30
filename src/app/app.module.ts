@@ -14,11 +14,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TreeComponent } from './tree/tree.component';
+import { DataMappingComponent } from './data-mapping/data-mapping.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     DropdownComponent,
+    DataMappingComponent,
     
   ],
   imports: [

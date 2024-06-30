@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TreeComponent } from './tree.component';
+import { DataMappingComponent } from './data-mapping.component';
 
-describe('TreeComponent', () => {
-  let component: TreeComponent;
-  let fixture: ComponentFixture<TreeComponent>;
+describe('DataMappingComponent', () => {
+  let component: DataMappingComponent;
+  let fixture: ComponentFixture<DataMappingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TreeComponent]
+      declarations: [DataMappingComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TreeComponent);
+    fixture = TestBed.createComponent(DataMappingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
