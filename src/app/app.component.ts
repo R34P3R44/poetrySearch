@@ -14,7 +14,6 @@ export class AppComponent {
   receivedSearchTerm: string = '';
   results: any[] = [];
 
-
   handleDDLSelection(ddlSelectedData: string ): void {
     this.receivedDDLselection = ddlSelectedData;
     console.log(ddlSelectedData)
@@ -26,8 +25,7 @@ export class AppComponent {
 
   constructor(private apiService: ApiService){ }
 
-  onSearch():void {
-    console.log("searchbuttonclicked")
+  async onSearch():Promise<void> {
 
     if(this.receivedDDLselection === 'author'){
       this.apiService.searchForAuthor(this.receivedSearchTerm).subscribe(data => this.results = data);
@@ -56,6 +54,5 @@ export class AppComponent {
     }
   }
 
-
-
 }
+

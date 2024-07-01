@@ -73,4 +73,9 @@
     outline: none;
     font-size: 15px;
   }
+
+  .accordionContainer{
+    width: 70vw;
+    margin: 1rem
+}
   

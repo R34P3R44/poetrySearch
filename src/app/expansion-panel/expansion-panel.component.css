@@ -1,0 +1,9 @@
+.poemLinesStyle{
+    display: flex;
+    flex-direction: column;
+}
+
+.poemLinesStyle .mat-content.mat-content-hide-toggle{
+    display: flex;
+    flex-direction: column;
+}

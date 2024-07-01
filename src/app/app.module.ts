@@ -13,15 +13,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TreeComponent } from './tree/tree.component';
-import { DataMappingComponent } from './data-mapping/data-mapping.component';
+import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     DropdownComponent,
-    DataMappingComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -33,8 +30,7 @@ import { DataMappingComponent } from './data-mapping/data-mapping.component';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    TreeComponent
-  
+    ExpansionPanelComponent
   ],
   providers: [
     provideClientHydration(),

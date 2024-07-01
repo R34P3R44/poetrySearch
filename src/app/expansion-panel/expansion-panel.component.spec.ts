@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataMappingComponent } from './data-mapping.component';
+import { ExpansionPanelComponent } from './expansion-panel.component';
 
-describe('DataMappingComponent', () => {
-  let component: DataMappingComponent;
-  let fixture: ComponentFixture<DataMappingComponent>;
+describe('ExpansionPanelComponent', () => {
+  let component: ExpansionPanelComponent;
+  let fixture: ComponentFixture<ExpansionPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DataMappingComponent]
+      declarations: [ExpansionPanelComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DataMappingComponent);
+    fixture = TestBed.createComponent(ExpansionPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

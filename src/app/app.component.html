@@ -217,9 +217,11 @@
       </div>
     </div>
   </div>
-  <div *ngIf="results.length">
-    <h3>Search Results</h3>
-    <div *ngFor="let item of results" class="cardContainer">
+  <div *ngFor="let item of results" class="accordionContainer">
+    <app-expansion-panel *ngIf="results.length" [resultsData]="item"></app-expansion-panel>
+  </div>
+  <!-- <div *ngIf="results.length">
+    <div *ngFor="let item of results" class="cardContainer"> -->
       <!-- <button type="button" class="collapsible">{{item.author}}</button>
         <div class="cardInnerContainer">
           <div>{{item.title}}</div>
@@ -239,12 +241,12 @@
         
         <div>{{item.linecount}}</div>
       </div> -->
-    </div>
+    <!-- </div> -->
       <!-- <ul>
         <li>
           <h6>results.map(result => result.title)</h6>
         </li>
       </ul> -->
-  </div>
+  <!-- </div> -->
 </main>
 <router-outlet />
