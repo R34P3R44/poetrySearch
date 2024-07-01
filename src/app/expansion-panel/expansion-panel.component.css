@@ -1,0 +1,13 @@
+.poemLinesStyle{
+    display: flex;
+    flex-direction: column;
+}
+
+.poemLinesStyle .mat-content.mat-content-hide-toggle{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleButtonStyle{
+    background-color: rgb(125, 201, 255);
+}

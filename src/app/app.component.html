@@ -62,7 +62,6 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 1rem;
     box-sizing: inherit;
@@ -218,13 +217,11 @@
       </div>
     </div>
   </div>
-  <div *ngIf="results.length">
-    <h2>Search Results</h2>
-    <ul>
-      <li>
-        <h4>{{results}}</h4>
-      </li>
-    </ul>
+  <div *ngIf="results$ | async as results"> 
+    <div *ngFor="let group of results" class="accordionContainer">
+      <app-expansion-panel [resultsData]="group">{{group.author}}</app-expansion-panel>
+    </div>
+
   </div>
 </main>
 <router-outlet />

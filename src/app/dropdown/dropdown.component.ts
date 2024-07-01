@@ -9,6 +9,7 @@ export class DropdownComponent {
   selectedValue: string = '';
   @Output() SearchCriteria: EventEmitter<string> = new EventEmitter<string>();
   
+  
   options: {value: string, display: string}[] = [
     {value: 'author', display: 'Author'},
     {value: 'title', display: 'Title'},
