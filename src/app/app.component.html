@@ -219,7 +219,13 @@
   </div>
   <div *ngIf="results$ | async as results"> 
     <div *ngFor="let group of results" class="accordionContainer">
-      <app-expansion-panel [resultsData]="group">{{group.author}}</app-expansion-panel>
+      <app-expansion-panel *ngIf="receivedDDLselection === 'author'" [resultsData]="group">{{group.author}}</app-expansion-panel>
+      <app-expansion-panel *ngIf="receivedDDLselection === 'title'" [resultsData]="group">{{group.title}}</app-expansion-panel>
+      <app-expansion-panel *ngIf="receivedDDLselection === 'linecount'" [resultsData]="group">{{group.linecount}}</app-expansion-panel>
+      <app-expansion-panel *ngIf="receivedDDLselection === 'poemcount'" [resultsData]="group">{{group.poemcount}}</app-expansion-panel>
+      <app-expansion-panel *ngIf="receivedDDLselection === 'lines'" [resultsData]="group">{{group.lines}}</app-expansion-panel>
+
+
     </div>
 
   </div>

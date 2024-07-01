@@ -15,6 +15,8 @@ export class AppComponent {
   receivedDDLselection: string = '';
   receivedSearchTerm: string = '';
   results$: Observable<any>;
+  titleResults$: Observable<any>;
+
 
   constructor(private apiService: ApiService){ }
 
@@ -42,28 +44,70 @@ export class AppComponent {
         toArray()
       );
     }
-    // else if(this.receivedDDLselection === 'title'){
-    //   this.apiService.searchForTitle(this.receivedSearchTerm).subscribe(data => this.results = data);
+    else if(this.receivedDDLselection === 'title'){
+      this.results$ = this.apiService.searchForTitle(this.receivedSearchTerm).pipe(
+        mergeMap(authors => of(...authors)),
+        groupBy(title => title),
+        mergeMap(group$ =>
+          group$.pipe(
+            toArray(),
+            map(titles => ({title: group$.key, titles}))
+          )
+        ),
+        toArray()
+      );
+    }
+    else if(this.receivedDDLselection === 'lines'){
+      this.results$ = this.apiService.searchForLines(this.receivedSearchTerm).pipe(
+        mergeMap(titles => of(...titles)),
+        groupBy(lines => lines),
+        mergeMap(group$ =>
+          group$.pipe(
+            toArray(),
+            map(titles => ({title: group$.key, titles}))
+          )
+        ),
+        toArray()
+      );
+    }
 
-    // }
-    // else if(this.receivedDDLselection === 'lines'){
-    //   this.apiService.searchForLines(this.receivedSearchTerm).subscribe(data => this.results = data);
-
-    // }
-    // else if(this.receivedDDLselection === 'linecount'){
-    //   let linecountInt: any
-    //   linecountInt = parseInt(this.receivedSearchTerm, 10)
-    //   if(linecountInt){
-    //     this.apiService.searchForLineCount(linecountInt).subscribe(data => this.results = data);
-    //   }
-    // }
-    // else if(this.receivedDDLselection === 'poemcount'){
-    //   let poemcountInt: any
-    //   poemcountInt = parseInt(this.receivedSearchTerm, 10)
-    //   if(poemcountInt){
-    //     this.apiService.searchForPoemCount(poemcountInt).subscribe(data => this.results = data);
-    //   }
-    // }
+    else if(this.receivedDDLselection === 'linecount'){
+      let linecountInt: any
+      linecountInt = parseInt(this.receivedSearchTerm, 10)
+      if(linecountInt){
+        this.results$ = this.apiService.searchForLineCount(this.receivedSearchTerm).pipe(
+          mergeMap(titles => of(...titles)),
+          groupBy(linecount => linecount),
+          mergeMap(group$ =>
+            group$.pipe(
+              toArray(),
+              map(titles => ({title: group$.key, titles}))
+            )
+          ),
+          toArray()
+        );
+  
+      }
+    }
+    
+    else if(this.receivedDDLselection === 'poemcount'){
+      let poemcountInt: any
+      poemcountInt = parseInt(this.receivedSearchTerm, 10)
+      if(poemcountInt){
+        this.results$ = this.apiService.searchForPoemCount(this.receivedSearchTerm).pipe(
+          mergeMap(titles => of(...titles)),
+          groupBy(poemcount => poemcount),
+          mergeMap(group$ =>
+            group$.pipe(
+              toArray(),
+              map(titles => ({title: group$.key, titles}))
+            )
+          ),
+          toArray()
+        );
+  
+      }
+    }
 
   }
 
