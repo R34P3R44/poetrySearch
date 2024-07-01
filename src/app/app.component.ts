@@ -8,11 +8,11 @@ import { ApiService } from './api.service';
   
 })
 export class AppComponent {
-  [x: string]: any;
   title = 'PoetrySearch'
   receivedDDLselection: string = '';
   receivedSearchTerm: string = '';
   results: any[] = [];
+
 
   handleDDLSelection(ddlSelectedData: string ): void {
     this.receivedDDLselection = ddlSelectedData;

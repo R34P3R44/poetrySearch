@@ -217,36 +217,11 @@
       </div>
     </div>
   </div>
-  <div *ngFor="let item of results" class="accordionContainer">
-    <app-expansion-panel *ngIf="results.length" [resultsData]="item"></app-expansion-panel>
+  <div *ngIf="results.length > 0">
+    <div  *ngFor="let item of results" class="accordionContainer">
+      <app-expansion-panel [resultsData]="item"></app-expansion-panel>
+    </div>
+
   </div>
-  <!-- <div *ngIf="results.length">
-    <div *ngFor="let item of results" class="cardContainer"> -->
-      <!-- <button type="button" class="collapsible">{{item.author}}</button>
-        <div class="cardInnerContainer">
-          <div>{{item.title}}</div>
-          <div class="cardPoemContainer">{{item.lines}}</div>
-        </div> -->
-
-        <!-- <button (click)="onClickCollapsible" type="button" class="collapsible">{{item.author}}</button>
-        <div class="content1">
-          <p>{{item.title}}</p>
-          <p class="cardPoemContainer">{{item.lines}}</p>
-        </div> -->
-
-      <!-- <div class="cardInnerContainer">
-        <div>{{item.id}}</div>
-        
-        <div></div>
-        
-        <div>{{item.linecount}}</div>
-      </div> -->
-    <!-- </div> -->
-      <!-- <ul>
-        <li>
-          <h6>results.map(result => result.title)</h6>
-        </li>
-      </ul> -->
-  <!-- </div> -->
 </main>
 <router-outlet />
