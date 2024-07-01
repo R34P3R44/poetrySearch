@@ -5,10 +5,11 @@ import { Observable } from 'rxjs';
 
 export interface Result {
   id: number;
-  author: string;
-  title: string;
-  lines: string;
-  linecount: string
+  author: any;
+  title: any;
+  lines: any;
+  linecount: any;
+  poemcount: any;
 }
 @Injectable({
   providedIn: 'root'
@@ -22,15 +23,15 @@ export class ApiService {
     return this.http.get<Result[]>(`https://poetrydb.org/author/${author}`);  
   }
   searchForTitle(title: string): Observable<any> {
-    return this.http.get<any>(`https://poetrydb.org/title/${title}`);
+    return this.http.get<Result[]>(`https://poetrydb.org/title/${title}`);
   }
   searchForLines(lines: string): Observable<any> {
-    return this.http.get<any>(`https://poetrydb.org/lines/${lines}`);
+    return this.http.get<Result[]>(`https://poetrydb.org/lines/${lines}`);
   }
   searchForLineCount(linecount: string): Observable<any> {
-    return this.http.get<any>(`https://poetrydb.org/linecount/${linecount}`);
+    return this.http.get<Result[]>(`https://poetrydb.org/linecount/${linecount}`);
   }
   searchForPoemCount(poemcount: string): Observable<any> {
-    return this.http.get<any>(`https://poetrydb.org/poemcount/${poemcount}`);
+    return this.http.get<Result[]>(`https://poetrydb.org/poemcount/${poemcount}`);
   }
 }

@@ -3,6 +3,7 @@ import { ApiService, Result } from './api.service';
 import { Observable, of } from 'rxjs';
 import { groupBy, map, mergeMap, reduce, toArray } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +11,10 @@ import { groupBy, map, mergeMap, reduce, toArray } from 'rxjs/operators';
   
 })
 export class AppComponent {
-[x: string]: any;
   title = 'PoetrySearch'
   receivedDDLselection: string = '';
   receivedSearchTerm: string = '';
   results$: Observable<any>;
-  titleResults$: Observable<any>;
-
 
   constructor(private apiService: ApiService){ }
 
@@ -46,7 +44,7 @@ export class AppComponent {
     }
     else if(this.receivedDDLselection === 'title'){
       this.results$ = this.apiService.searchForTitle(this.receivedSearchTerm).pipe(
-        mergeMap(authors => of(...authors)),
+        mergeMap(titles => of(...titles)),
         groupBy(title => title),
         mergeMap(group$ =>
           group$.pipe(
