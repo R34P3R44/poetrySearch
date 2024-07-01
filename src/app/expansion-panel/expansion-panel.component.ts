@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, signal, } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, signal, OnInit } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {NgFor} from '@angular/common';
 @Component({
@@ -13,4 +13,8 @@ export class ExpansionPanelComponent {
   @Input() resultsData: any;
   result: any
   readonly panelOpenState = signal(false);
+
+  ngOnInit():void{
+    console.log(this.resultsData)
+  }
 }

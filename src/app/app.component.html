@@ -217,9 +217,9 @@
       </div>
     </div>
   </div>
-  <div *ngIf="results.length > 0">
-    <div  *ngFor="let item of results" class="accordionContainer">
-      <app-expansion-panel [resultsData]="item"></app-expansion-panel>
+  <div *ngIf="results$ | async as results"> 
+    <div *ngFor="let group of results" class="accordionContainer">
+      <app-expansion-panel [resultsData]="group">{{group.author}}</app-expansion-panel>
     </div>
 
   </div>
